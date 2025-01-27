@@ -1,0 +1,63 @@
+class Stack{
+    static final int max=100;
+    int top;
+    int []arr= new int[max];
+
+    boolean isEmpty(){
+        return top<0;
+    }
+    Stack(){
+        top = -1;
+    }
+    boolean push(int x){
+        if(top>=(max-1)){
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        else{
+            arr[++top] = x;
+            System.out.println(x+" item pushed into stack");
+            return true;
+        }
+    }
+    int pop(){
+        if(isEmpty() ){
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        else{
+            int x = arr[top--];
+            return x;
+        }
+    }
+    int peek(){
+        if(isEmpty() ){
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        else{
+            int x = arr[top];
+            return x;
+        }
+    }
+    void print(){
+        for(int i = top ; i>-1; i--){
+            System.out.println(" "+ arr[i]);
+        }
+    }
+}
+
+public class Main {
+    public static void main (String []args){
+        Stack s = new Stack();
+        s.pop();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        s.push(4);
+        s.print();
+        s.pop();
+        s.print();
+        s.peek();
+    }
+}
