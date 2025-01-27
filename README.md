@@ -1,1 +1,1 @@
-# Stack-implementation-using-linked-list-in-java
+# Implementation-Of-Stack-in-Java
